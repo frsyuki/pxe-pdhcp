@@ -1,0 +1,25 @@
+#!/sbin/runscript
+# pxe-pdhcp init script for Gentoo Linux.
+# written by int128 <http://hatena.ne.jp/int128>
+#
+# pxe-pdhcp is an implementation of Preboot Execution Environment (PXE) server.
+
+depend() {
+	need net
+}
+
+start() {
+	ebegin "Starting ${SVCNAME}"
+	start-stop-daemon --start --exec "${PXE_EXEC}" --pidfile "/var/run/${SVCNAME}.pid" \
+		-- \
+		-l '0.0.0.0' -b '255.255.255.255' \
+		-t "${PXE_TFTP_ADDRESS}" "${PXE_TFTP_IMAGE}"
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --exec "${PXE_EXEC}" --pidfile "/var/run/${SVCNAME}.pid"
+	eend $?
+}
+

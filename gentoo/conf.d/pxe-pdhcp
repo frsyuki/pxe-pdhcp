@@ -1,0 +1,18 @@
+# pxe-pdhcp configuration script for Gentoo Linux.
+# written by int128 <http://hatena.ne.jp/int128>
+#
+# pxe-pdhcp is an implementation of Preboot Execution Environment (PXE) server.
+
+PXE_EXEC="$(which pxe-pdhcp)"
+
+# TFTP server address.
+# pxe-pdhcp tells TFTP server adress to clients.
+PXE_TFTP_ADDRESS='192.168.1.100'
+
+# Boot-image path on TFTP server.
+# Clients will download boot-image from TFTP server.
+#
+# Example:
+#PXE_TFTP_IMAGE='syslinux.0'
+PXE_TFTP_IMAGE='undionly.kpxe'
+
