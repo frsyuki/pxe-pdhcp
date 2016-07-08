@@ -327,7 +327,7 @@ void parse_argv(int argc, char* argv[])
 		}
 		ifr.ifr_addr.sa_family = AF_INET;
 		strncpy(ifr.ifr_name, listen_dev, IFNAMSIZ-1);
-		ifr.ifr_name[IFNAMSIZ] = '\0';
+		ifr.ifr_name[IFNAMSIZ-1] = '\0';
 
 		if (!set_server_address || !set_tftp_ip) {
 			if (ioctl(s, SIOCGIFADDR, &ifr) == -1) {
