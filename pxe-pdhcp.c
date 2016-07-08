@@ -139,7 +139,7 @@ void dhcp_reply(struct dhcp_packet *p, struct sockaddr* client_address, socklen_
 	/* set vendor class identifier */
 	res = add_dhcp_option(&re, DHO_VENDOR_CLASS_IDENTIFIER,
 		(u_char*)PXE_IDENTIFIER_STRING,
-		strlen(PXE_IDENTIFIER_STRING)+1);
+		strlen(PXE_IDENTIFIER_STRING));
 	if (res == -1) {
 		DBG("add_dhcp_option() failed");
 		return;
