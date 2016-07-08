@@ -1,7 +1,7 @@
 /*
  * pxe-pdhcp
  *
- * Copyright (c) 2007 FURUHASHI Sadayuki <fr _at_ syuki.skr.jp>
+ * Copyright (c) 2007-2016 Sadayuki Furuhashi
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
